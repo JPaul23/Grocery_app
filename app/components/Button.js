@@ -1,16 +1,27 @@
-import { View } from 'react-native';
-import { Button } from 'react-native-paper';
+import { StyleSheet } from 'react-native';
+import { Button } from '@rneui/themed';
 
 import { log } from '../config/logging';
 
-{/* <View className="flex flex-row justify-center absolute gap-3 bg-[#82CD47] border-r-2 w-72 h-10 py-9 px-5 border-solid border-8"> */ }
 const ButtonPress = () => {
   return (
-    <Button icon="camera" mode="contained" onPress={() => log.info("Pressed Get started")}>
-      Get Started
-    </Button>
-
+    <Button title="Get Started" onPress={() => log.info("Pressed Get started")} />
   )
 }
-
 export default ButtonPress;
+
+export const styles = StyleSheet.create({
+  button: {
+    flex: 1,
+    //flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 9,
+    width: 284,
+    height: 40,
+    top: 690,
+    backgroundColor: '#82CD47',
+    /* boxShadow: '0 2 4 rgba(0, 0, 0, 0.2)', */
+    borderRadius: 20,
+  },
+});
