@@ -1,30 +1,33 @@
 import { StyleSheet } from 'react-native';
-import { Button } from 'react-native-paper';
+import { Pressable, Text } from 'react-native';
 
 import { log } from '../config/logging';
+import global from '../config/global';
 
-const ButtonPress = () => {
+const ButtonPress = ({ title }) => {
+
   return (
-
-    <Button icon="camera" mode="contained" onPress={() => log.info("Pressed Get started")}>
-      Get Started
-    </Button>
+    <Pressable style={styles.button} onPress={() => log.info(`Pressed ${title}`)}>
+      <Text style={styles.textButton}>{title}</Text>
+    </Pressable>
   )
-}
+};
 export default ButtonPress;
 
 export const styles = StyleSheet.create({
   button: {
-    flex: 1,
     //flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     padding: 9,
     width: 284,
     height: 40,
-    top: 690,
-    backgroundColor: '#82CD47',
-    /* boxShadow: '0 2 4 rgba(0, 0, 0, 0.2)', */
-    borderRadius: 20,
+    backgroundColor: global.primaryBtnColor,
+    borderRadius: global.buttonRadius,
+  },
+  textButton: {
+    color: global.white,
+    textAlign: 'center',
+    fontSize: global.fontSize
   },
 });

@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const MyCartScrreen = () => {
+const MyCartScreen = () => {
     return (
         <View>
-            <Text>MyCartScrreen</Text>
+            <Text>MyCartScreen</Text>
         </View>
     )
 }
 
-export default MyCartScrreen;
+export default MyCartScreen;

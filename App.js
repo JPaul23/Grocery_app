@@ -1,24 +1,23 @@
+import React, { useState } from 'react';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from "@react-navigation/native";
 
-import { ButtonPress } from './app/components';
-import WelcomeScreen from './app/screens/WelcomeScreen';
+import AccountNavigators from './app/navigators/AccountNavigators';
 
-export default function App() {
+const App = () => {
+
+  const [authenticated, setAuthenticated] = useState(false);
+
   return (
-    <View style={{
-      flex: 1,
-      justyContent: 'center',
-      alignItems: 'center',
-      padding: 30
-    }}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <View style={{
-        flex: 0.5
-      }}>
-        <WelcomeScreen />
-      </View>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <SafeAreaProvider>
+        <StatusBar style="auto" />
+        <AccountNavigators />
+      </SafeAreaProvider>
+    </NavigationContainer>
+
   );
-}
+};
+
+export default App;
