@@ -1,23 +1,26 @@
-import { View, Text, Image, StyleSheet } from 'react-native'
+import { View, Text, ImageBackground, StyleSheet } from 'react-native'
 import React from 'react'
 import { ButtonPress } from '../components';
 import global from '../config/global';
 
-const WelcomeScreen = () => {
+const WelcomeScreen = ({ navigation }) => {
     return (
         <View style={styles.layout}>
             <View style={styles.splashImage}>
                 {/*  <Image source={require('../assets/image/splashback.png')} resizeMode="cover" /> */}
             </View>
+            {/* <ImageBackground source={require('../assets/image/splashback.png')} resizeMode="cover" style={styles.image}>
+            </ImageBackground> */}
+
             <View style={styles.actionpart}>
 
                 <View style={styles.textsView}>
                     <Text style={styles.glocery}>Grocery Delivery</Text>
                     <Text style={styles.door}>at your door</Text>
-                    <Text style={styles.subtext}>order grocery from anywhere and get delivery at your door
+                    <Text style={styles.subtext} numberOfLines={2}>order grocery from anywhere and get delivery at your door
                     </Text>
                 </View>
-                <ButtonPress title={'Get Started'} />
+                <ButtonPress title={'Get Started'} navigation={navigation} page={'signin'} />
             </View>
         </View>
     )
@@ -36,6 +39,10 @@ export const styles = StyleSheet.create({
         height: 40,
         top: 0
     },
+    image: {
+        flex: 1,
+        justifyContent: 'center',
+    },
     splashImage: {
         position: 'absolute',
         width: 419,
@@ -47,16 +54,13 @@ export const styles = StyleSheet.create({
     actionpart: {
         position: 'absolute',
         width: 317,
-        height: 118,
+        height: 300,
         left: 10,
-        top: 300,
+        top: 350,
+        //padding: 20
     },
     textsView: {
-        position: 'absolute',
-        width: 317,
-        height: 118,
-        left: 36,
-        top: 300,
+        padding: 9
     },
     glocery: {
         fontStyle: 'normal',
@@ -65,6 +69,7 @@ export const styles = StyleSheet.create({
         textAlign: 'center',
         lineHeight: 28,
         color: '#E5E5E5',
+        paddingTop: 28
     },
     door: {
         fontStyle: 'normal',
@@ -73,6 +78,7 @@ export const styles = StyleSheet.create({
         textAlign: 'center',
         color: '#E5E5E5',
         lineHeight: 28,
+        paddingTop: 10,
         opacity: 0.9,
     },
     subtext: {
@@ -83,5 +89,6 @@ export const styles = StyleSheet.create({
         color: '#E5E5E5',
         lineHeight: 20,
         opacity: 0.7,
+        padding: 15
     }
 });

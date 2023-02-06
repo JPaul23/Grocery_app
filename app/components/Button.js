@@ -4,10 +4,14 @@ import { Pressable, Text } from 'react-native';
 import { log } from '../config/logging';
 import global from '../config/global';
 
-const ButtonPress = ({ title }) => {
+const ButtonPress = ({ title, navigation, page }) => {
 
   return (
-    <Pressable style={styles.button} onPress={() => log.info(`Pressed ${title}`)}>
+    <Pressable style={styles.button} onPress={() => {
+      navigation.navigate(`${page}`);
+      log.info(`Pressed ${title}`);
+    }
+    }>
       <Text style={styles.textButton}>{title}</Text>
     </Pressable>
   )
