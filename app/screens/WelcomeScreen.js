@@ -1,4 +1,4 @@
-import { View, Text, ImageBackground, StyleSheet } from 'react-native'
+import { View, Text, ImageBackground, Image, StyleSheet, StatusBar } from 'react-native'
 import React from 'react'
 import { ButtonPress } from '../components';
 import global from '../config/global';
@@ -6,8 +6,9 @@ import global from '../config/global';
 const WelcomeScreen = ({ navigation }) => {
     return (
         <View style={styles.layout}>
+            <StatusBar hidden={true} />
             <View style={styles.splashImage}>
-                {/*  <Image source={require('../assets/image/splashback.png')} resizeMode="cover" /> */}
+                <Image source={require('../assets/image/splashback.png')} resizeMode="cover" />
             </View>
             {/* <ImageBackground source={require('../assets/image/splashback.png')} resizeMode="cover" style={styles.image}>
             </ImageBackground> */}
@@ -20,7 +21,7 @@ const WelcomeScreen = ({ navigation }) => {
                     <Text style={styles.subtext} numberOfLines={2}>order grocery from anywhere and get delivery at your door
                     </Text>
                 </View>
-                <ButtonPress title={'Get Started'} navigation={navigation} page={'signin'} />
+                <ButtonPress title={'Get Started'} navigation={navigation} page={'signin'} outStyle={styles.startBtn} />
             </View>
         </View>
     )
@@ -54,10 +55,13 @@ export const styles = StyleSheet.create({
     actionpart: {
         position: 'absolute',
         width: 317,
+        justifyContent: 'center',
+        alignItems: 'center',
         height: 300,
         left: 10,
         top: 350,
-        //padding: 20
+        paddingRight: 5,
+        paddingLeft: 5,
     },
     textsView: {
         padding: 9
@@ -90,5 +94,11 @@ export const styles = StyleSheet.create({
         lineHeight: 20,
         opacity: 0.7,
         padding: 15
+    },
+    startBtn: {
+        width: 184,
+        height: 43,
+        //left: 100,
     }
+
 });
