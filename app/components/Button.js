@@ -4,6 +4,15 @@ import { Pressable, Text } from 'react-native';
 import { log } from '../config/logging';
 import global from '../config/global';
 
+export const BackButton = ({ color }) => (
+  {/* <Icon
+    name="arrow-left"
+    size={25}
+    color={color}
+
+  /> */}
+);
+
 const ButtonPress = ({ title, navigation, page, outStyle }) => {
 
   return (

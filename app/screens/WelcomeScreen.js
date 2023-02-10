@@ -1,4 +1,4 @@
-import { View, Text, ImageBackground, Image, StyleSheet, StatusBar } from 'react-native'
+import { View, Text, Image, StyleSheet, StatusBar } from 'react-native'
 import React from 'react'
 import { ButtonPress } from '../components';
 import global from '../config/global';
@@ -10,8 +10,6 @@ const WelcomeScreen = ({ navigation }) => {
             <View style={styles.splashImage}>
                 <Image source={require('../assets/image/splashback.png')} resizeMode="cover" />
             </View>
-            {/* <ImageBackground source={require('../assets/image/splashback.png')} resizeMode="cover" style={styles.image}>
-            </ImageBackground> */}
 
             <View style={styles.actionpart}>
 
@@ -38,7 +36,7 @@ export const styles = StyleSheet.create({
         padding: 9,
         width: 284,
         height: 40,
-        top: 0
+        top: 0,
     },
     image: {
         flex: 1,
@@ -50,7 +48,7 @@ export const styles = StyleSheet.create({
         height: 844,
         left: -23,
         top: 0,
-        backgroundColor: global.black
+        backgroundColor: global.black,
     },
     actionpart: {
         position: 'absolute',
@@ -59,12 +57,12 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         height: 300,
         left: 10,
-        top: 350,
-        paddingRight: 5,
-        paddingLeft: 5,
+        top: 280,
+        paddingRight: 20,
+        paddingLeft: 10,
     },
     textsView: {
-        padding: 9
+        padding: 9,
     },
     glocery: {
         fontStyle: 'normal',
@@ -73,7 +71,7 @@ export const styles = StyleSheet.create({
         textAlign: 'center',
         lineHeight: 28,
         color: '#E5E5E5',
-        paddingTop: 28
+        paddingTop: 28,
     },
     door: {
         fontStyle: 'normal',
@@ -93,12 +91,11 @@ export const styles = StyleSheet.create({
         color: '#E5E5E5',
         lineHeight: 20,
         opacity: 0.7,
-        padding: 15
+        padding: 15,
     },
     startBtn: {
         width: 184,
         height: 43,
         //left: 100,
-    }
-
+    },
 });
